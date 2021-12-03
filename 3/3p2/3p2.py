@@ -23,12 +23,9 @@ with open("../input.txt", "r") as f_input:
 
     for o in op:
         copy = deepcopy(f)
-        prev_target = comm(copy, 0, o)
-        copy = [n for n in copy if n[0] == prev_target]
-        for b in range(1, n_bits):
+        for b in range(0, n_bits):
             actual = comm(copy, b, o)
-            copy = [n for n in copy if n[b-1] == prev_target and n[b] == actual]
-            prev_target = actual
+            copy = [n for n in copy if n[b] == actual]
             if len(copy) == 1: break
         op_res.append(copy[0])
 
