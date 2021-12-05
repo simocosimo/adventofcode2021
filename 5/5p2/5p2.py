@@ -22,7 +22,7 @@ with open("../input.txt") as f_input:
         else: diff = (point2[1] - point1[1]) if point1[0] == point2[0] else (point2[0] - point1[0])
 
         if diff > 0: r = list(range(0, diff + 1))
-        else: r = [x * -1 for x in list(range(0, -(diff - 1)))]
+        else: r = [-x for x in list(range(0, -(diff - 1)))]
 
         for i in r: 
             if draw_mode[0] == 'h':
