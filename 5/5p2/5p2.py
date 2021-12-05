@@ -17,8 +17,7 @@ with open("../input.txt") as f_input:
             draw_mode += '+' if point2[0] > point1[0] else '-'
             draw_mode += '+' if point2[1] > point1[1] else '-'
 
-        if draw_mode[0] == 'd':
-            diff = abs(point2[0] - point1[0]) if abs(point2[0] - point1[0]) > abs(point2[1] - point1[1]) else abs(point2[1] - point1[1])
+        if draw_mode[0] == 'd': diff = max(abs(point2[0] - point1[0]), abs(point2[1] - point1[1]))
         else: diff = (point2[1] - point1[1]) if point1[0] == point2[0] else (point2[0] - point1[0])
 
         if diff > 0: r = list(range(0, diff + 1))
