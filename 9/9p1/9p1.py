@@ -13,7 +13,4 @@ with open("../input.txt") as f_input:
             if i + 1 < len(mat):
                 if mat[i][x] >= mat[i + 1][x]: continue      #check down
             res += (mat[i][x] + 1)
-            print(f"Added {mat[i][x]} at row {i + 1}, col {x + 1} ")
-        print("============")
-
     print(res)
